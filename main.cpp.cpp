@@ -9,15 +9,15 @@ using namespace std;
 // Standard structure for a book to keep the code clean
 void addBooks() {
     ofstream file("library.txt", ios::app);
-    int id, edition, year;
-    string name, author, isbn;
-
-    cout << "Enter book id: "; cin >> id;
-    cin.ignore();
+    int  year;
+    string id,edition, name, author, isbn;
+cin.ignore();
+    cout << "Enter book id: "; getline(cin,id);
+    
     cout << "Enter the Title: "; getline(cin, name);
     cout << "Enter the Author: "; getline(cin, author);
     cout << "Enter the ISBN: "; getline(cin, isbn);
-    cout << "Enter Edition: "; cin >> edition;
+    cout << "Enter Edition: "; getline(cin,edition);
     cout << "Enter Year: "; cin >> year;
     cin.ignore();
 
@@ -192,3 +192,4 @@ int main() {
     } while (choice != 6);
     return 0;
 }
+

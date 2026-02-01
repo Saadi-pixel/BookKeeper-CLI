@@ -11,9 +11,8 @@ void addBooks() {
     ofstream file("library.txt", ios::app);
     int  year;
     string id,edition, name, author, isbn;
-cin.ignore();
-    cout << "Enter book id: "; getline(cin,id);
-    
+    cout << "Enter book id: "; cin>>id;
+    cin.ignore();
     cout << "Enter the Title: "; getline(cin, name);
     cout << "Enter the Author: "; getline(cin, author);
     cout << "Enter the ISBN: "; getline(cin, isbn);
@@ -192,4 +191,5 @@ int main() {
     } while (choice != 6);
     return 0;
 }
+
 

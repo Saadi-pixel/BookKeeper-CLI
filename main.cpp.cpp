@@ -10,9 +10,9 @@ using namespace std;
 void addBooks() {
     ofstream file("library.txt", ios::app);
     int  year;
-    string id,edition, name, author, isbn;
-    cout << "Enter book id: "; cin>>id;
-    cin.ignore();
+    string id, name, author,edition, isbn;
+    
+    cout << "Enter book id: "; getline(cin,id);
     cout << "Enter the Title: "; getline(cin, name);
     cout << "Enter the Author: "; getline(cin, author);
     cout << "Enter the ISBN: "; getline(cin, isbn);
@@ -29,7 +29,6 @@ void addBooks() {
 void displayBooks() {
     ifstream file("library.txt");
     if (!file) { cout << "Library is empty." << endl; return; }
-   // bool hasData=false;
 
     string line;
     bool hasData=false;
@@ -59,10 +58,9 @@ void displayBooks() {
             cout<<"\n Status: "<<status;
             cout<<"-----------------------------------------"<<endl;
         }}
-      //  else 
-      //  cout<<"no book available";
+    
       if(!hasData)
-      cout<<"no books in library"<<endl;
+      cout<<"------------no books in library--------------"<<endl;
     
     file.close();
 }
@@ -81,7 +79,7 @@ void issueBook() {
         string id, name, author, isbn, ed, yr, status;
 
         getline(ss, id, '|');
-        getline(ss, name, '|');
+       getline(ss, name, '|');
         getline(ss, author, '|');
         getline(ss, isbn, '|');
         getline(ss, ed, '|');
@@ -170,6 +168,7 @@ void checkAvailability() {
     file.close();
 }
 
+
 int main() {
     int choice;
     do {
@@ -191,5 +190,3 @@ int main() {
     } while (choice != 6);
     return 0;
 }
-
-
